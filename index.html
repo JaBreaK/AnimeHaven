@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anele's AnimeHaven">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="/img/logo-3.png">
+    <title>AnimeHaven | The #1 Place To Watch Anime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo-animehaven-1.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./categories.html">Categories</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">     
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="./login.html"><span class="icon_profile"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section  -->
+
+
+    <div class="container my-5">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__slider owl-carousel" id="hero-section">
+                <!-- Data akan di-render oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="product spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="section-title">
+                            <h4>Trending Now</h4>
+                        </div>
+                        <div class="row" id="product-section">
+                            <!-- Data akan di-render oleh JavaScript -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8"> 
+                        <div class="product__sidebar">
+                            <div class="product__sidebar__view">
+                                <div class="section-title">
+                                    <h5>Movies</h5>
+                                </div>  
+                            </div>
+                            <div id="movie">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/logo-animehaven-1.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="./index.html">Homepage</a></li>
+                            <li><a href="./categories.html">Categories</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Data hero
+        const heroList = [
+            {
+                name: "Fate / Stay Night: Unlimited Blade Works",
+                studio: "Wit Studio",
+                dateAired: "2013",
+                genre: "Action, Drama",
+                image: "img/hero/hero-1.jpg",
+                link: "Anime Details/Fate Stay Night.html"
+            },
+            {
+                name: "Attack On Titan",
+                studio: "ufotable",
+                dateAired: "2019",
+                genre: "Action, Supernatural",
+                image: "/img/hero/hero-2.png",
+                link: "Anime Details/Attack On Titan.html"
+            },
+            {
+                name: "Hunter X Hunter",
+                studio: "Toei Animation",
+                dateAired: "1999",
+                genre: "Adventure, Comedy",
+                image: "img/hero/hero-3.jpg",
+                link: "Anime Details/HunterxHunter.html"
+            }
+        ];
+
+        // Render Hero Section
+        const renderHeroSection = () => {
+            const heroContainer = document.getElementById('hero-section');
+            heroList.forEach(hero => {
+                const heroItem = `
+                    <div class="hero__items set-bg" data-setbg="${hero.image}">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="hero__text">
+                                    <div class="label">${hero.genre}</div>
+                                    <h2>${hero.name}</h2>
+                                    <p>${hero.studio} - ${hero.dateAired}</p>
+                                    <a href="${hero.link}"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                heroContainer.innerHTML += heroItem;
+            });
+        };
+        renderHeroSection();
+
+        // Data Anime
+        const animeList = [
+            {
+                name: "Kono Subarashii Sekai ni Shukufuku wo!",
+                status: "Completed",
+                duration: "23 min",
+                image: "https://cdn.myanimelist.net/images/anime/8/77831l.jpg",
+                link: "/anime/konosuba/konosuba.html"
+            },
+            
+        ];
+
+        // Render Product Section
+        const renderProductSection = () => {
+            const productContainer = document.getElementById('product-section');
+            animeList.forEach(anime => {
+                const productItem = `
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <a href="${anime.link}">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="${anime.image}">
+                                    <div class="ep">${anime.duration}</div>
+                                </div>
+                                <div class="product__item__text">
+                                    <ul>
+                                        <li>${anime.status}</li>
+                                    </ul>
+                                    <h5><a href="${anime.link}">${anime.name}</a></h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`;
+                productContainer.innerHTML += productItem;
+            });
+        };
+
+        // Panggil Fungsi Render
+        renderProductSection();
+
+         // Data Anime
+         const movieList = [
+            {
+                name: "Demon Slayer: Mugen Train",
+                views: "800.141 Viewes",
+                image: "img/sidebar/demon-slayer-movie.jpg",
+                link: "Anime Details/Mugen Train.html"
+            },
+            {
+                name: "JuJutsu Kaisen 0",
+                views: "920.641 Viewes",
+                image: "img/sidebar/jjk-0-movie.jpg",
+                link: "Anime Details/JJK Movie.html"
+            },{
+                name: "Your Name",
+                views: "549.100 Viewes",
+                image: "img/sidebar/your-name-movie.jpg",
+                link: "Anime Details/Your Name.html"
+            },{
+                name: "Boruto: Naruto The Movie",
+                views: "399.521 Viewes",
+                image: "img/sidebar/comment-4.jpg",
+                link: "Anime Details/Boruto Movie.html"
+            },
+        ];
+
+        // Render Product Section
+        const rendermovie = () => {
+            const productContainer = document.getElementById('movie');
+            movieList.forEach(movie => {
+                const productItem = `
+                <div class="product__sidebar__comment__item">
+                                    <div class="product__sidebar__comment__item__pic">
+                                        <img src="${movie.image}" alt="">
+                                    </div>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a href="Anime Details/Mugen Train.html">${movie.name}</a></h5>
+                                        <span><i class="fa fa-eye"></i> ${movie.views}</span>
+                                    </div>
+                                </div>`;
+                productContainer.innerHTML += productItem;
+            });
+        };
+
+        // Panggil Fungsi Render
+        rendermovie();
+
+
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
